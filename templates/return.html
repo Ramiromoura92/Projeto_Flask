@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{%block body%}
+
+<h2> {{the_title}}</h2>
+
+<form method="GET" action ='/cadastro/'>
+
+<table>
+<p> Use this form to submit a search requests</p>
+
+{% for row in the_result %}
+<table>
+    
+    <tr><td>Nome:</td><td>{{ row['nome'] }}</td></tr>
+    <tr><td>Sexo:</td><td>{{ row['sexo'] }}</td></tr>
+    <tr><td>Altura:</td><td>{{ row['altura'] }}</td></tr>
+    <tr><td>Nacionalidade:</td><td>{{ row['nacionalidade'] }}</td></tr>
+    
+    </table>
+    
+{% endfor %}
+
+
+</table>
+
+</form>
+
+{%endblock%}
